@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Treats Bakery - Animated & Interactive</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Sweet Treats Bakery</h1>
+    <button id="flip-btn" class="anim-btn">Flip Treat Box</button>
+    <button id="spinner-start" class="anim-btn">Start Loading</button>
+    <button id="spinner-stop" class="anim-btn">Stop Loading</button>
+
+    <div class="dropdown">
+      <button id="dropdown-btn" class="anim-btn">Categories ▼</button>
+      <div id="dropdown-menu" class="dropdown-content hidden">
+        <a href="#">Cakes</a>
+        <a href="#">Pastries</a>
+        <a href="#">Drinks</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="treat-box" id="treat-box" tabindex="0" aria-label="Treat box with front and back side">
+    <div class="front">🍰 Front Side</div>
+    <div class="back">🎂 Back Side</div>
+  </section>
+
+  <div id="spinner" class="spinner hidden" aria-label="Loading spinner"></div>
+
+  <section>
+    <button id="popup-btn" class="anim-btn">Show Promo Popup</button>
+  </section>
+
+  <div id="popup" class="popup hidden" role="alert" aria-live="assertive">
+    <p>🎉 Special Bakery Discount! Use code SWEET10</p>
+    <button id="popup-close" class="anim-btn">Close</button>
+  </div>
+
+  <section id="specials-section">
+    <h2>Weekly Specials</h2>
+    <div class="tabs" role="tablist" aria-label="Weekly specials tabs">
+      <button class="tab-btn active" data-day="mon" role="tab" aria-selected="true" aria-controls="tab-mon" id="tab-mon-btn">Mon</button>
+      <button class="tab-btn" data-day="tue" role="tab" aria-selected="false" aria-controls="tab-tue" id="tab-tue-btn">Tue</button>
+      <button class="tab-btn" data-day="wed" role="tab" aria-selected="false" aria-controls="tab-wed" id="tab-wed-btn">Wed</button>
+    </div>
+    <div class="tab-content" id="tab-mon" role="tabpanel" aria-labelledby="tab-mon-btn">Chocolate Cake - 20% off!</div>
+    <div class="tab-content hidden" id="tab-tue" role="tabpanel" aria-labelledby="tab-tue-btn">Blueberry Muffins - Buy 1 Get 1</div>
+    <div class="tab-content hidden" id="tab-wed" role="tabpanel" aria-labelledby="tab-wed-btn">Free coffee with any pastry!</div>
+  </section>
+
+  <section id="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question anim-btn" aria-expanded="false" aria-controls="faq1">Do you offer gluten-free options?</button>
+      <div class="faq-answer" id="faq1" role="region" aria-hidden="true">
+        Yes! We have several gluten-free treats available daily.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question anim-btn" aria-expanded="false" aria-controls="faq2">Can I order custom cakes?</button>
+      <div class="faq-answer" id="faq2" role="region" aria-hidden="true">
+        Absolutely, just contact us with your request!
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contact-form" novalidate>
+      <label>
+        Name:
+        <input type="text" id="name" name="name" />
+        <span class="error" id="name-error" aria-live="polite"></span>
+      </label><br/>
+      <label>
+        Email:
+        <input type="email" id="email" name="email" />
+        <span class="error" id="email-error" aria-live="polite"></span>
+      </label><br/>
+      <label>
+        Message:
+        <textarea id="message" name="message" maxlength="500"></textarea>
+        <small id="char-count">0/500</small>
+        <span class="error" id="message-error" aria-live="polite"></span>
+      </label><br/>
+      <button type="submit" class="anim-btn">Send Message</button>
+      <div id="form-success" class="success-message" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <button id="back-to-top" class="anim-btn hidden" aria-label="Back to top">⬆</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
